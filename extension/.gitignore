@@ -1,0 +1,13 @@
+
+# Build
+build
+dist.zip
+build.zip
+
+# Packages
+node_modules
+
+# Environment
+firebaseConfig.json
+.env
+.env.*

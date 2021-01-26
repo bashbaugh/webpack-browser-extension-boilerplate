@@ -1,0 +1,125 @@
+// Copyright (C) 2020 Benjamin Ashbaugh
+// licensed under GPL-3 at /LICENSE
+
+@use 'colors';
+
+.fine-print {
+  font-size: 0.9em;
+  color: grey;
+  margin-top: 0;
+}
+
+@mixin _input {
+  border-radius: 8px;
+  border: 1px solid #000000;
+  margin: 5px;
+
+  &:focus {
+    box-shadow: 0 0 10px #808080;
+    outline: none;
+    border: 1px solid #000000;
+  }
+}
+
+@mixin input {
+  @include _input;
+  padding: 10px;
+  width: 80%;
+}
+
+@mixin select {
+  @include _input;
+  background: white;
+  padding: 4px;
+}
+
+@mixin textarea {
+  @include _input;
+  padding: 5px;
+}
+
+@mixin button {
+  cursor: pointer;
+  margin: 10px;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  background: white;
+  transition: 0.2s;
+
+  &:hover, &:focus {
+    border-radius: 8px;
+    background: colors.$faded-primary;
+  }
+
+  &:focus {
+    box-shadow: 0 0 10px #808080;
+  }
+
+  &:disabled {
+    cursor: inherit;
+    border: 1px solid grey;
+  }
+}
+
+@mixin switch {
+  /* The switch - the box around the slider */
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+
+  /* Hide default HTML checkbox */
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: colors.$primary-color;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px colors.$primary-color;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+}
