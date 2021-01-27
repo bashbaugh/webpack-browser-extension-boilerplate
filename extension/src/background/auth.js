@@ -1,3 +1,5 @@
+// TODO Rewrite auth with custom flow
+
 import firebase from 'firebase/app'
 import 'firebase/auth'
 import chrome from 'browserApi'

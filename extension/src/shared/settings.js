@@ -1,11 +1,12 @@
+// Utils for saving extension settings
+
 import browser from 'browserApi'
 
 const DEFAULT_SETTINGS = {
-  popupDisabled: false,
-  onlyEditableText: false,
-  siteDisableList: []
+  foo: true
 }
 
+// Reset settings to DEFAULT_SETTINGS
 export function resetSettings() {
   return new Promise((resolve, reject) => {
     browser.storage.local.set({
@@ -15,6 +16,7 @@ export function resetSettings() {
   })
 }
 
+// Get settings (as object)
 export function getSettings() {
   return new Promise((resolve, reject) => {
     browser.storage.local.get(['extension_options'], ({ extension_options }) => {
@@ -23,6 +25,7 @@ export function getSettings() {
   })
 }
 
+// Update settings (pass an object with properties to update)
 // TODO reject on error
 export function saveSettings(newSettings) {
   return new Promise((resolve, reject) => {

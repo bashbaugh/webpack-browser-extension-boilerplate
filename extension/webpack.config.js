@@ -25,7 +25,7 @@ const options = {
     popup: './src/popup/index.js',
     background: './src/background/index.js',
     content: './src/content/index.js',
-    staticPage: './src/pages/extensionPage.js'
+    staticPage: './src/pages/page.js'
   },
   output: {
     path: path.resolve('build'),
@@ -90,7 +90,8 @@ const options = {
       'TARGET': browser
     }),
     new DotenvPlugin({
-      path: './.env'
+      path: './.env',
+      safe: true
     }),
     new CopyWebpackPlugin({
       // If you need to dynamically modify manifest.json (for example to auto-increment the version, perhaps?) do it with CopyWebpackPlugin

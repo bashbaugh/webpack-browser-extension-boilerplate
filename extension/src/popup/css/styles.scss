@@ -1,0 +1,22 @@
+// Popup styles
+
+@use '../common/theme';
+
+@include theme.font-Mulish;
+
+#app {
+    width: 400px;
+    margin: 20px;
+    font-family: 'Mulish', sans-serif;
+}
+
+.footer {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: gray;
+}
+
+#dev-badge {
+    color: orange;
+    display: none;
+}

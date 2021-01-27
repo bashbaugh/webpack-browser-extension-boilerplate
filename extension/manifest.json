@@ -38,13 +38,5 @@
       },
       "description": "Do something"
     }
-  },
-  "oauth2": {
-    "client_id": "538488729267-lt97t2f0np0vupuipv99aivpvlr63jvd.apps.googleusercontent.com",
-    "scopes": [
-      "https://www.googleapis.com/auth/userinfo.email",
-      "https://www.googleapis.com/auth/userinfo.profile"
-    ]
-  },
-  "key": "YOUR_EXTENSION_KEY"
+  }
 }

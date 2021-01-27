@@ -1,7 +1,7 @@
-const admin = require('firebase-admin')
+import admind from 'firebase-admin'
 
 // A middleware factory for checking the Firebase auth status
-const validateFirebaseIdToken = function(checkRevoked=false) {
+export function validateIdToken (checkRevoked=false) {
   return (req, res, next) => {
     if (!req.headers.authorization || !req.headers.authorization.startsWith('Bearer ')) {
       return next()
@@ -19,5 +19,3 @@ const validateFirebaseIdToken = function(checkRevoked=false) {
       })
   }
 }
-
-module.exports = validateFirebaseIdToken

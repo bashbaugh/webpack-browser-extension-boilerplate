@@ -1,7 +1,11 @@
+/* https://google-webfonts-helper.herokuapp.com/ is useful for creating font faces and font files
+ * Use "chrome-extension://__MSG_@@extension_id__/fonts/Fontname" as the folder prefix, it will be automatically replaced with the extension ID
+ * Place all the font faces in a mixin for the font
+ * Then, place the font files in extension/fonts/Fontname
+ * Here's an example using Mulish
+ */
 
 @mixin Mulish {
-  /* https://google-webfonts-helper.herokuapp.com/fonts/mulish?subsets=latin */
-
   /* mulish-300 - latin */
   @font-face {
     font-family: 'Mulish';

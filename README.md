@@ -1,6 +1,6 @@
 # Webpack Browser Extension Boilerplate
 
-A simple template for creating Chrome extensions using webpack, SCSS and Firebase.
+A (really bad) template for creating Chrome extensions using webpack, SCSS and Firebase.
 
 ## Features 
 
@@ -9,6 +9,7 @@ A simple template for creating Chrome extensions using webpack, SCSS and Firebas
  + Change the name and details in `extension/manifest.json`, both `package.json`s, etc.
  + Edit the manifest to specify the correct permissions, content script match pattern, etc.
  + Update webpack.config.js with your license banner (check bottom of file) and any other necesarry changes
+ + Set uninstall URL, etc. in background page
 
 
 ### Contributing

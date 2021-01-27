@@ -1,0 +1,51 @@
+// Styles for static pages
+
+@use '../common/theme';
+
+@include theme.font-Mulish;
+
+#page {
+  text-align: center;
+  width: 80%;
+  margin: 40px auto;
+  font-family: 'Mulish', sans-serif;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+#settings {
+  width: 60%;
+  margin: 20px auto;
+  padding: 5px;
+  border-radius: 10px;
+  background: #f5f5f5;
+
+  display: none;
+
+  p {
+    color: theme.$text-gray;
+    font-size: 1.1em;
+  }
+
+  & > div {
+    margin: 30px 10px;
+    border-bottom: 1px solid theme.$light-gray;
+  }
+}
+
+#open-shortcuts-link {
+  font-weight: bold;
+  color: theme.$primary-color;
+  font-size: 1.1em;
+}
+
+#keyboard-shortcuts p {
+  background: white;
+  color: black;
+  font-size: 1.2em;
+  //font-weight: bold;
+  padding: 6px;
+  margin: 0;
+}
