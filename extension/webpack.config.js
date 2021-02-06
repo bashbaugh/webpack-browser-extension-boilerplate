@@ -11,13 +11,18 @@ const webpack = require("webpack"),
 const devMode = process.env.NODE_ENV !== "production"
 const browser = (process.env.TARGET_BROWSER || 'chrome').toString()
 
-// A mapping of browser names to browser APIs
-const browserApiName = {
+const browserApiNamespaces = {
   'chrome': 'chrome',
   'firefox': 'browser',
-  'edge': 'chrome'
-}[browser] || 'chrome'
+  'edge': 'browser',
+  'opera': 'chrome'
+}
 
+if (!Object.keys(browserApiNamespace).includes(browser)) console.warn(`WARNING: Target browser "${browser}" is not in the list of API namespaces`)
+
+// A mapping of browser names to extension APIs
+// FIXME this doesn't really work as some APIs use promises and some use callbacks
+const browserApiNamespace = browserApiNamespaces[browser] || 'chrome'
 
 const options = {
   mode: devMode ? 'development' : 'production',
@@ -81,7 +86,7 @@ const options = {
     }
   },
   externals: {
-    browserApi: browserApiName // This lets us import the browser api (browser, chrome, etc.)
+    browserApi: browserApiNamespace // This lets us import the correct browser api
   },
   plugins: [
     new CleanWebpackPlugin(),
