@@ -1,6 +1,6 @@
 # Webpack Browser Extension Boilerplate
 
-> **This is still a WIP**
+> **This is the branch with auth boilerplate - it is still a WIP**
 
 A starter for creating cross-browser extensions using webpack, SCSS and (optionally) Firebase.
 
@@ -21,7 +21,6 @@ A starter for creating cross-browser extensions using webpack, SCSS and (optiona
  + Follow [these instructions](https://developer.chrome.com/docs/apps/app_identity/#copy_key) to set a consistent extension key in the manifest (important if using OAuth as you'll need a consistent redirect URL)
  + Update webpack.config.js with your license banner (check bottom of file) and any other necesarry changes
  + Set uninstall URL, etc. in background page
-
 
 ### Contributing
 
