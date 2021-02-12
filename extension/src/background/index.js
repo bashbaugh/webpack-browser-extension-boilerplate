@@ -1,15 +1,9 @@
-import firebase from 'firebase/app'
-import firebaseConfig from 'firebaseConfig'
-import initializeAuth from './auth'
 import createContextMenus from './contextMenusAndShortcuts'
 import hotReload from './hot-reload'
-import sendApiRequest from './api'
 import browser from 'browserApi'
 import { resetSettings } from '../shared/settings'
 
 if (process.env.NODE_ENV === 'development') hotReload()
-
-firebase.initializeApp(firebaseConfig)
 
 if ('update_url' in browser.runtime.getManifest()) browser.runtime.setUninstallURL('UNINSTALL_URL')
 
@@ -22,7 +16,6 @@ browser.runtime.onInstalled.addListener((details) => {
 })
 
 createContextMenus()
-initializeAuth()
 
 // Message listener
 browser.runtime.onMessage.addListener((msg, sender, respond) => {
@@ -30,9 +23,6 @@ browser.runtime.onMessage.addListener((msg, sender, respond) => {
     case 'exampleAction':
       respond('Hello! I (background page) received your message.')
       break
-    case 'sendApiRequest':
-      sendApiRequest(msg.type, msg.route, msg.data)
-        .then(respond)
   }
-  return true
+  // return true // if using async responses
 })

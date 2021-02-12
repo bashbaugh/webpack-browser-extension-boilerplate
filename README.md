@@ -4,9 +4,11 @@
 
 A starter for creating cross-browser extensions using webpack, SCSS and (optionally) Firebase.
 
+### Also see: 
+ + [Branch with example auth and extra features](/tree/auth) (WIP)
+
 ## Features 
- + Simple [hot realoading](https://github.com/xpl/crx-hotreload)
- + Auth and API code is consolidated into the background script to avoid spreading its complexity through multiple parts of the extension
+ + Simple [hot reloading](https://github.com/xpl/crx-hotreload)
  + Works across multiple browsers (chrome, edge, firefox):
    + prefix yarn commands with `TARGET_BROWSER=chrome|edge|firefox ` to set the target browser for building. (chrome by default)
    + Update the Babel browserlist in webpack.config.js to specify which versions you need to support
